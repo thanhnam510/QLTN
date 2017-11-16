@@ -28,15 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.qLTNDataSet = new QLTN.QLTNDataSet();
-            this.bds_monhoc = new System.Windows.Forms.BindingSource();
+            this.bds_monhoc = new System.Windows.Forms.BindingSource(this.components);
             this.mONHOCTableAdapter = new QLTN.QLTNDataSetTableAdapters.MONHOCTableAdapter();
             this.tableAdapterManager = new QLTN.QLTNDataSetTableAdapters.TableAdapterManager();
             this.mONHOCGridControl = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.MAMH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TENMH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.ciThem = new DevExpress.XtraBars.BarCheckItem();
             this.ciSua = new DevExpress.XtraBars.BarCheckItem();
@@ -52,16 +51,23 @@
             this.txtTENMH = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lbMAMH = new System.Windows.Forms.Label();
+            this.grMonhoc = new System.Windows.Forms.GroupBox();
+            this.lbAlert = new System.Windows.Forms.Label();
             this.lbTENMH = new System.Windows.Forms.Label();
+            this.lbMAMH = new System.Windows.Forms.Label();
+            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.MAMH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TENMH = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.qLTNDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bds_monhoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRadioGroup1)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.grMonhoc.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // qLTNDataSet
@@ -93,38 +99,19 @@
             this.mONHOCGridControl.Location = new System.Drawing.Point(0, 28);
             this.mONHOCGridControl.MainView = this.gridView1;
             this.mONHOCGridControl.Name = "mONHOCGridControl";
+            this.mONHOCGridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemButtonEdit1});
             this.mONHOCGridControl.Size = new System.Drawing.Size(981, 278);
             this.mONHOCGridControl.TabIndex = 0;
             this.mONHOCGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
-            // gridView1
+            // repositoryItemButtonEdit1
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.MAMH,
-            this.TENMH});
-            this.gridView1.GridControl = this.mONHOCGridControl;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsDetail.EnableMasterViewMode = false;
-            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView1.OptionsSelection.MultiSelect = true;
-            this.gridView1.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gridView1_SelectionChanged);
-            // 
-            // MAMH
-            // 
-            this.MAMH.FieldName = "MAMH";
-            this.MAMH.Name = "MAMH";
-            this.MAMH.OptionsColumn.AllowEdit = false;
-            this.MAMH.Visible = true;
-            this.MAMH.VisibleIndex = 0;
-            // 
-            // TENMH
-            // 
-            this.TENMH.FieldName = "TENMH";
-            this.TENMH.Name = "TENMH";
-            this.TENMH.OptionsColumn.AllowEdit = false;
-            this.TENMH.Visible = true;
-            this.TENMH.VisibleIndex = 1;
+            this.repositoryItemButtonEdit1.AutoHeight = false;
+            this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             // 
             // barManager1
             // 
@@ -227,7 +214,7 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(160, 135);
+            this.btnLuu.Location = new System.Drawing.Point(170, 131);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(125, 27);
             this.btnLuu.TabIndex = 5;
@@ -237,7 +224,8 @@
             // txtMAMH
             // 
             this.txtMAMH.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtMAMH.Location = new System.Drawing.Point(121, 53);
+            this.txtMAMH.Location = new System.Drawing.Point(122, 61);
+            this.txtMAMH.MaxLength = 5;
             this.txtMAMH.Name = "txtMAMH";
             this.txtMAMH.Size = new System.Drawing.Size(295, 22);
             this.txtMAMH.TabIndex = 6;
@@ -245,7 +233,8 @@
             // txtTENMH
             // 
             this.txtTENMH.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtTENMH.Location = new System.Drawing.Point(121, 95);
+            this.txtTENMH.Location = new System.Drawing.Point(122, 103);
+            this.txtTENMH.MaxLength = 40;
             this.txtTENMH.Name = "txtTENMH";
             this.txtTENMH.Size = new System.Drawing.Size(295, 22);
             this.txtTENMH.TabIndex = 7;
@@ -253,7 +242,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 56);
+            this.label1.Location = new System.Drawing.Point(30, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 15);
             this.label1.TabIndex = 8;
@@ -262,54 +251,102 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 98);
+            this.label2.Location = new System.Drawing.Point(30, 106);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 15);
             this.label2.TabIndex = 9;
             this.label2.Text = "Tên môn học :";
             // 
-            // groupBox1
+            // grMonhoc
             // 
-            this.groupBox1.Controls.Add(this.lbTENMH);
-            this.groupBox1.Controls.Add(this.lbMAMH);
-            this.groupBox1.Controls.Add(this.txtMAMH);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.btnLuu);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtTENMH);
-            this.groupBox1.Location = new System.Drawing.Point(206, 324);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(454, 168);
-            this.groupBox1.TabIndex = 10;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Môn học";
+            this.grMonhoc.Controls.Add(this.lbAlert);
+            this.grMonhoc.Controls.Add(this.lbTENMH);
+            this.grMonhoc.Controls.Add(this.lbMAMH);
+            this.grMonhoc.Controls.Add(this.txtMAMH);
+            this.grMonhoc.Controls.Add(this.label2);
+            this.grMonhoc.Controls.Add(this.btnLuu);
+            this.grMonhoc.Controls.Add(this.label1);
+            this.grMonhoc.Controls.Add(this.txtTENMH);
+            this.grMonhoc.Enabled = false;
+            this.grMonhoc.Location = new System.Drawing.Point(296, 324);
+            this.grMonhoc.Name = "grMonhoc";
+            this.grMonhoc.Size = new System.Drawing.Size(472, 180);
+            this.grMonhoc.TabIndex = 10;
+            this.grMonhoc.TabStop = false;
+            this.grMonhoc.Text = "Môn học";
             // 
-            // lbMAMH
+            // lbAlert
             // 
-            this.lbMAMH.AutoSize = true;
-            this.lbMAMH.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbMAMH.Location = new System.Drawing.Point(118, 35);
-            this.lbMAMH.Name = "lbMAMH";
-            this.lbMAMH.Size = new System.Drawing.Size(167, 15);
-            this.lbMAMH.TabIndex = 10;
-            this.lbMAMH.Text = "Nhập mã môn học có  1-5 kí tự";
+            this.lbAlert.AutoSize = true;
+            this.lbAlert.ForeColor = System.Drawing.Color.Red;
+            this.lbAlert.Location = new System.Drawing.Point(119, 19);
+            this.lbAlert.Name = "lbAlert";
+            this.lbAlert.Size = new System.Drawing.Size(0, 15);
+            this.lbAlert.TabIndex = 12;
             // 
             // lbTENMH
             // 
             this.lbTENMH.AutoSize = true;
             this.lbTENMH.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbTENMH.Location = new System.Drawing.Point(118, 78);
+            this.lbTENMH.Location = new System.Drawing.Point(119, 86);
             this.lbTENMH.Name = "lbTENMH";
             this.lbTENMH.Size = new System.Drawing.Size(172, 15);
             this.lbTENMH.TabIndex = 11;
             this.lbTENMH.Text = "Nhập tên môn học có 1-40 kí tự";
+            // 
+            // lbMAMH
+            // 
+            this.lbMAMH.AutoSize = true;
+            this.lbMAMH.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lbMAMH.Location = new System.Drawing.Point(119, 43);
+            this.lbMAMH.Name = "lbMAMH";
+            this.lbMAMH.Size = new System.Drawing.Size(167, 15);
+            this.lbMAMH.TabIndex = 10;
+            this.lbMAMH.Text = "Nhập mã môn học có  1-5 kí tự";
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.MAMH,
+            this.TENMH});
+            this.gridView1.GridControl = this.mONHOCGridControl;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsDetail.EnableMasterViewMode = false;
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsSelection.MultiSelect = true;
+            // 
+            // MAMH
+            // 
+            this.MAMH.AppearanceHeader.ForeColor = System.Drawing.Color.Black;
+            this.MAMH.AppearanceHeader.Options.UseForeColor = true;
+            this.MAMH.AppearanceHeader.Options.UseTextOptions = true;
+            this.MAMH.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.MAMH.Caption = "Mã môn học";
+            this.MAMH.FieldName = "MAMH";
+            this.MAMH.Name = "MAMH";
+            this.MAMH.OptionsColumn.AllowEdit = false;
+            this.MAMH.OptionsColumn.AllowFocus = false;
+            this.MAMH.Visible = true;
+            this.MAMH.VisibleIndex = 0;
+            // 
+            // TENMH
+            // 
+            this.TENMH.AppearanceHeader.Options.UseTextOptions = true;
+            this.TENMH.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TENMH.Caption = "Tên môn học";
+            this.TENMH.FieldName = "TENMH";
+            this.TENMH.Name = "TENMH";
+            this.TENMH.OptionsColumn.AllowEdit = false;
+            this.TENMH.OptionsColumn.AllowFocus = false;
+            this.TENMH.Visible = true;
+            this.TENMH.VisibleIndex = 1;
             // 
             // frmMonhoc2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1059, 504);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grMonhoc);
             this.Controls.Add(this.mONHOCGridControl);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -322,11 +359,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.qLTNDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bds_monhoc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRadioGroup1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grMonhoc.ResumeLayout(false);
+            this.grMonhoc.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -339,7 +378,6 @@
         private QLTNDataSetTableAdapters.MONHOCTableAdapter mONHOCTableAdapter;
         private QLTNDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private DevExpress.XtraGrid.GridControl mONHOCGridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar bar2;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
@@ -351,9 +389,7 @@
         private System.Windows.Forms.TextBox txtTENMH;
         private System.Windows.Forms.TextBox txtMAMH;
         private DevExpress.XtraEditors.SimpleButton btnLuu;
-        private DevExpress.XtraGrid.Columns.GridColumn MAMH;
-        private DevExpress.XtraGrid.Columns.GridColumn TENMH;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grMonhoc;
         private DevExpress.XtraBars.BarCheckItem ciThem;
         private DevExpress.XtraBars.BarCheckItem ciSua;
         private DevExpress.XtraBars.BarButtonItem btnXoa;
@@ -361,5 +397,11 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemRadioGroup repositoryItemRadioGroup1;
         private System.Windows.Forms.Label lbTENMH;
         private System.Windows.Forms.Label lbMAMH;
+        private System.Windows.Forms.Label lbAlert;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
+        private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn MAMH;
+        private DevExpress.XtraGrid.Columns.GridColumn TENMH;
     }
 }
