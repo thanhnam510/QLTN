@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.qLTNDataSet = new QLTN.QLTNDataSet();
-            this.bds_monhoc = new System.Windows.Forms.BindingSource(this.components);
-            this.mONHOCTableAdapter = new QLTN.QLTNDataSetTableAdapters.MONHOCTableAdapter();
-            this.tableAdapterManager = new QLTN.QLTNDataSetTableAdapters.TableAdapterManager();
-            this.mONHOCGridControl = new DevExpress.XtraGrid.GridControl();
-            this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.ciThem = new DevExpress.XtraBars.BarCheckItem();
@@ -56,62 +50,23 @@
             this.lbTENMH = new System.Windows.Forms.Label();
             this.lbMAMH = new System.Windows.Forms.Label();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
+            this.qLTN_CS1_DataSet = new QLTN.QLTN_CS1_DataSet();
+            this.bds_monhoc = new System.Windows.Forms.BindingSource(this.components);
+            this.mONHOCTableAdapter = new QLTN.QLTN_CS1_DataSetTableAdapters.MONHOCTableAdapter();
+            this.tableAdapterManager = new QLTN.QLTN_CS1_DataSetTableAdapters.TableAdapterManager();
+            this.mONHOCGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.MAMH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TENMH = new DevExpress.XtraGrid.Columns.GridColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.qLTNDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bds_monhoc)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mONHOCGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRadioGroup1)).BeginInit();
             this.grMonhoc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLTN_CS1_DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bds_monhoc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mONHOCGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // qLTNDataSet
-            // 
-            this.qLTNDataSet.DataSetName = "QLTNDataSet";
-            this.qLTNDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bds_monhoc
-            // 
-            this.bds_monhoc.DataMember = "MONHOC";
-            this.bds_monhoc.DataSource = this.qLTNDataSet;
-            // 
-            // mONHOCTableAdapter
-            // 
-            this.mONHOCTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.GIAOVIENTableAdapter = null;
-            this.tableAdapterManager.KHOATableAdapter = null;
-            this.tableAdapterManager.LOPTableAdapter = null;
-            this.tableAdapterManager.MONHOCTableAdapter = this.mONHOCTableAdapter;
-            this.tableAdapterManager.UpdateOrder = QLTN.QLTNDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // mONHOCGridControl
-            // 
-            this.mONHOCGridControl.DataSource = this.bds_monhoc;
-            this.mONHOCGridControl.Location = new System.Drawing.Point(0, 28);
-            this.mONHOCGridControl.MainView = this.gridView1;
-            this.mONHOCGridControl.Name = "mONHOCGridControl";
-            this.mONHOCGridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemButtonEdit1});
-            this.mONHOCGridControl.Size = new System.Drawing.Size(981, 278);
-            this.mONHOCGridControl.TabIndex = 0;
-            this.mONHOCGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // repositoryItemButtonEdit1
-            // 
-            this.repositoryItemButtonEdit1.AutoHeight = false;
-            this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             // 
             // barManager1
             // 
@@ -138,6 +93,8 @@
             this.bar2.DockCol = 0;
             this.bar2.DockRow = 0;
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar2.FloatLocation = new System.Drawing.Point(57, 209);
+            this.bar2.FloatSize = new System.Drawing.Size(213, 31);
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.ciThem),
             new DevExpress.XtraBars.LinkPersistInfo(this.ciSua),
@@ -188,7 +145,7 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 504);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 512);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Size = new System.Drawing.Size(1059, 0);
             // 
@@ -198,7 +155,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 22);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 482);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 490);
             // 
             // barDockControlRight
             // 
@@ -206,7 +163,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1059, 22);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 482);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 490);
             // 
             // repositoryItemRadioGroup1
             // 
@@ -268,7 +225,7 @@
             this.grMonhoc.Controls.Add(this.label1);
             this.grMonhoc.Controls.Add(this.txtTENMH);
             this.grMonhoc.Enabled = false;
-            this.grMonhoc.Location = new System.Drawing.Point(296, 324);
+            this.grMonhoc.Location = new System.Drawing.Point(338, 312);
             this.grMonhoc.Name = "grMonhoc";
             this.grMonhoc.Size = new System.Drawing.Size(472, 180);
             this.grMonhoc.TabIndex = 10;
@@ -304,6 +261,40 @@
             this.lbMAMH.TabIndex = 10;
             this.lbMAMH.Text = "Nhập mã môn học có  1-5 kí tự";
             // 
+            // qLTN_CS1_DataSet
+            // 
+            this.qLTN_CS1_DataSet.DataSetName = "QLTN_CS1_DataSet";
+            this.qLTN_CS1_DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bds_monhoc
+            // 
+            this.bds_monhoc.DataMember = "MONHOC";
+            this.bds_monhoc.DataSource = this.qLTN_CS1_DataSet;
+            // 
+            // mONHOCTableAdapter
+            // 
+            this.mONHOCTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.KHOATableAdapter = null;
+            this.tableAdapterManager.LOPTableAdapter = null;
+            this.tableAdapterManager.MONHOCTableAdapter = this.mONHOCTableAdapter;
+            this.tableAdapterManager.UpdateOrder = QLTN.QLTN_CS1_DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // mONHOCGridControl
+            // 
+            this.mONHOCGridControl.DataSource = this.bds_monhoc;
+            this.mONHOCGridControl.Location = new System.Drawing.Point(0, 28);
+            this.mONHOCGridControl.MainView = this.gridView1;
+            this.mONHOCGridControl.MenuManager = this.barManager1;
+            this.mONHOCGridControl.Name = "mONHOCGridControl";
+            this.mONHOCGridControl.Size = new System.Drawing.Size(810, 220);
+            this.mONHOCGridControl.TabIndex = 15;
+            this.mONHOCGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -311,33 +302,23 @@
             this.TENMH});
             this.gridView1.GridControl = this.mONHOCGridControl;
             this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsDetail.EnableMasterViewMode = false;
+            this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsSelection.MultiSelect = true;
+            this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
+            this.gridView1.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gridView1_SelectionChanged);
             // 
             // MAMH
             // 
-            this.MAMH.AppearanceHeader.ForeColor = System.Drawing.Color.Black;
-            this.MAMH.AppearanceHeader.Options.UseForeColor = true;
-            this.MAMH.AppearanceHeader.Options.UseTextOptions = true;
-            this.MAMH.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.MAMH.Caption = "Mã môn học";
             this.MAMH.FieldName = "MAMH";
             this.MAMH.Name = "MAMH";
-            this.MAMH.OptionsColumn.AllowEdit = false;
-            this.MAMH.OptionsColumn.AllowFocus = false;
             this.MAMH.Visible = true;
             this.MAMH.VisibleIndex = 0;
             // 
             // TENMH
             // 
-            this.TENMH.AppearanceHeader.Options.UseTextOptions = true;
-            this.TENMH.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.TENMH.Caption = "Tên môn học";
             this.TENMH.FieldName = "TENMH";
             this.TENMH.Name = "TENMH";
-            this.TENMH.OptionsColumn.AllowEdit = false;
-            this.TENMH.OptionsColumn.AllowFocus = false;
             this.TENMH.Visible = true;
             this.TENMH.VisibleIndex = 1;
             // 
@@ -345,9 +326,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1059, 504);
-            this.Controls.Add(this.grMonhoc);
+            this.ClientSize = new System.Drawing.Size(1059, 512);
             this.Controls.Add(this.mONHOCGridControl);
+            this.Controls.Add(this.grMonhoc);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -356,15 +337,14 @@
             this.Name = "frmMonhoc2";
             this.Text = "frmMonhoc2";
             this.Load += new System.EventHandler(this.frmMonhoc2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.qLTNDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bds_monhoc)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mONHOCGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRadioGroup1)).EndInit();
             this.grMonhoc.ResumeLayout(false);
             this.grMonhoc.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLTN_CS1_DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bds_monhoc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mONHOCGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -372,12 +352,6 @@
         }
 
         #endregion
-
-        private QLTNDataSet qLTNDataSet;
-        private System.Windows.Forms.BindingSource bds_monhoc;
-        private QLTNDataSetTableAdapters.MONHOCTableAdapter mONHOCTableAdapter;
-        private QLTNDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private DevExpress.XtraGrid.GridControl mONHOCGridControl;
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar bar2;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
@@ -398,8 +372,12 @@
         private System.Windows.Forms.Label lbTENMH;
         private System.Windows.Forms.Label lbMAMH;
         private System.Windows.Forms.Label lbAlert;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
+        private System.Windows.Forms.BindingSource bds_monhoc;
+        private QLTN_CS1_DataSet qLTN_CS1_DataSet;
+        private QLTN_CS1_DataSetTableAdapters.MONHOCTableAdapter mONHOCTableAdapter;
+        private QLTN_CS1_DataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private DevExpress.XtraGrid.GridControl mONHOCGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn MAMH;
         private DevExpress.XtraGrid.Columns.GridColumn TENMH;

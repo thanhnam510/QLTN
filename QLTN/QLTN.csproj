@@ -95,6 +95,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLTNDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="QLTN_CS1_DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLTN_CS1_DataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmDangnhap.resx">
       <DependentUpon>frmDangnhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,6 +145,17 @@
     </None>
     <None Include="QLTNDataSet.xss">
       <DependentUpon>QLTNDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLTN_CS1_DataSet.xsc">
+      <DependentUpon>QLTN_CS1_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLTN_CS1_DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLTN_CS1_DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLTN_CS1_DataSet.xss">
+      <DependentUpon>QLTN_CS1_DataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

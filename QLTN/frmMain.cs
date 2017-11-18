@@ -72,11 +72,11 @@ namespace QLTN
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form f = this.CheckExists(typeof(frmMonhoc2));
+            Form f = this.CheckExists(typeof(frmMonhoc));
             if (f != null) f.Activate();
             else
             {
-                f = new frmMonhoc2();
+                f = new frmMonhoc();
                 f.MdiParent = this;
                 f.Show();
             }

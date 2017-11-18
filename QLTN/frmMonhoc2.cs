@@ -21,9 +21,11 @@ namespace QLTN
 
         private void frmMonhoc2_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'qLTNDataSet.MONHOC' table. You can move, or remove it, as needed.
+            // TODO: This line of code loads data into the 'qLTN_CS1_DataSet.MONHOC' table. You can move, or remove it, as needed.
+            this.mONHOCTableAdapter.Fill(this.qLTN_CS1_DataSet.MONHOC);
+            // TODO: This line of code loads data into the 'qLTN_CS1_DataSet.MONHOC' table. You can move, or remove it, as needed.
             mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.mONHOCTableAdapter.Fill(this.qLTNDataSet.MONHOC);
+            this.mONHOCTableAdapter.Fill(this.qLTN_CS1_DataSet.MONHOC);
             this.Width = SystemInformation.VirtualScreen.Width;
             mONHOCGridControl.Width =  this.Width;
 
@@ -55,7 +57,8 @@ namespace QLTN
         }
         private void refresh()
         {
-            mONHOCTableAdapter.Fill(qLTNDataSet.MONHOC);
+
+            //mONHOCTableAdapter.Fill(qLTN_CS1_DataSet.MONHOC);
         }
 
         private void btnLammoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -85,7 +88,6 @@ namespace QLTN
                         lbAlert.Text = ex.Message + ex.Number;
                     return;
                 }
-                refresh();
                 return;
             }
             DataRow dr = gridView1.GetDataRow(bds_monhoc.Position);
@@ -93,9 +95,7 @@ namespace QLTN
             {
                 dr["MAMH"] = txtMAMH.Text.Trim();
                 dr["TENMH"] = txtTENMH.Text.Trim();
-                bds_monhoc.EndEdit();
-                mONHOCTableAdapter.Update(qLTNDataSet.MONHOC);
-                bds_monhoc.ResetCurrentItem();
+                mONHOCTableAdapter.Update(qLTN_CS1_DataSet.MONHOC);
                 txtMAMH.Text = txtTENMH.Text = "";
             }
             catch (SqlException ex)
@@ -108,14 +108,6 @@ namespace QLTN
 
         }
 
-        private void gridView1_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
-        {
-            if (!ciSua.Checked)
-                return;
-            DataRow dr = gridView1.GetDataRow(bds_monhoc.Position);
-            txtMAMH.Text = dr["MAMH"].ToString().Trim();
-            txtTENMH.Text = dr["TENMH"].ToString().Trim();
-        }
 
         private void ciThem_CheckedChanged(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -123,9 +115,10 @@ namespace QLTN
             {
                 grMonhoc.Enabled = true;
                 ciSua.Checked = false;
+                txtMAMH.Text = "";
+                txtTENMH.Text = "";
+                txtMAMH.Focus();
             }
-            else
-                grMonhoc.Enabled = false;
         }
 
         private void ciSua_CheckedChanged(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -137,10 +130,17 @@ namespace QLTN
                 DataRow dr = gridView1.GetDataRow(bds_monhoc.Position);
                 txtMAMH.Text = dr["MAMH"].ToString().Trim();
                 txtTENMH.Text = dr["TENMH"].ToString().Trim();
+                txtMAMH.Focus();
             }
-            else
-                grMonhoc.Enabled = false;
         }
 
+        private void gridView1_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
+        {
+            if (!ciSua.Checked)
+                return;
+            DataRow dr = gridView1.GetDataRow(bds_monhoc.Position);
+            txtMAMH.Text = dr["MAMH"].ToString().Trim();
+            txtTENMH.Text = dr["TENMH"].ToString().Trim();
+        }
     }
 }
